@@ -1,12 +1,12 @@
 # Projeto_Speclune
- Compartilhamento de reviews
+ ## Compartilhamento de reviews
  
  Aplicação que permita o compartilhamento de opiniões sobre jogos
  
  Feature principal: 
  Fórum
 
- Descrição:
+ ## Descrição:
  
  -Criar posts
  
