@@ -7,8 +7,11 @@
  Fórum
 
  Descrição:
+ 
  -Criar posts
+ 
  -Comentar em posts
+ 
  -Categorizar/buscar posts por tópico 
 
  
