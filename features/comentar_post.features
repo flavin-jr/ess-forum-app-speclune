@@ -11,7 +11,7 @@ Scenario: Comentar em um post sem atingir o limite de caracteres
     When Eu seleciono a opção "comentar"
         And digito o texto "Jogo ruim" menor ou igual a "20" caracteres no campo "Adicione um comentário"
         And seleciono a opção "enviar"
-    Then Eu estou na página "publicações" 
+    Then Eu estou na página "publicações"
         And vejo a "publicação" com o meu comentário "Jogo ruim" logo abaixo
 
 Scenario: Comentar em um post ultrapassando o limite de caracteres
