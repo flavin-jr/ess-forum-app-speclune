@@ -53,3 +53,15 @@ And eu seleciono a opção "Salvar alterações"
 Then eu vejo na tela uma mensagem de erro
 And eu ainda estou na página "Meus posts"
 And eu ainda vejo a frase "lol é muito bom #topdms" na minha lista de posts
+
+
+Scenario:  Cancelar a edição de um post existente 
+Given estou logado com o usuário "flavin_doPneu123"
+And eu estou na página "Meus posts"
+And eu vejo uma lista de posts
+And eu vejo a opção "editar post"
+when eu seleciono a "editar post"
+And  eu substituo a frase "lol é muito bom #topdms" presente na "caixa de texto" pela frase "lol é top"
+And eu seleciono a opção "Cancelar"
+Then eu ainda vejo a frase "lol é muito bom #topdms" na minha lista de posts
+And eu ainda estou na página "Meus posts"
