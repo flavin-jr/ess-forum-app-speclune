@@ -47,3 +47,4 @@ Scenario: Acessar uma página enquanto comenta em um post
         And seleciono a página "perfil"
     Then Eu estou na página "perfil"
         And nada foi comentado na(o) "publicação"
+	And Vejo uma mensagem "Salvar o rascunho" na tela
