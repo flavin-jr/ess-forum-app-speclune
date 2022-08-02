@@ -52,4 +52,5 @@ And  eu substituo a frase "lol é muito bom #topdms" presente na "caixa de texto
 And eu seleciono a opção "Salvar alterações"
 Then eu vejo na tela uma mensagem de erro
 And eu ainda estou na página "Meus posts"
+And eu nao vejo a frase "" na minha lista de posts
 And eu ainda vejo a frase "lol é muito bom #topdms" na minha lista de posts
