@@ -36,3 +36,14 @@ Scenario: Fazendo um comentário vazio
         And eu tento selecionar a opção "enviar"
     Then A opção "enviar" está indisponível
         And ainda vejo o campo "Adicione um comentário" vazio
+
+Scenario: Acessar uma página enquanto comenta em um post
+    Given Estou logado com o usuário "Alanzoka"
+        And estou na página "publicações"
+        And vejo uma "publicação"
+        And vejo a opção "comentar"
+    When Eu seleciono a opção "comentar"
+        And digito o texto "Eu gost" no campo "Adicione um comentário"
+        And seleciono a página "perfil"
+    Then Eu estou na página "perfil"
+        And nada foi comentado na(o) "publicação"
