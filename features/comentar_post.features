@@ -68,4 +68,4 @@ Scenario: Adicionar um gif ao comentar em um post
         And seleciono a opção "gif" abaixo do campo "Adicione um comentário"
     Then Eu estou na "publicação"
 	And vejo opções de "gif" armazenados no(a) "sistema"
-
+	And vejo a opção "fechar" 
