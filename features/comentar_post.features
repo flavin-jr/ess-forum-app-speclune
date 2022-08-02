@@ -25,3 +25,14 @@ Scenario: Comentar em um post ultrapassando o limite de caracteres
     Then Eu estou na página "publicações" 
         And eu vejo a publicação com o meu comentário “Um dos mel”, mostrando apenas os primeiros “10” caracteres
         And vejo uma opção "ver mais" ao lado do meu comentário "Um dos mel"
+
+Scenario: Fazendo um comentário vazio
+    Given Estou logado com o usuário "Alanzoka"
+        And estou na página "publicações"
+        And vejo uma "publicação"
+        And vejo a opção "comentar"
+    When Eu seleciono a opção "comentar"
+        And deixo o campo "Adicione um comentário" vazio
+        And eu tento selecionar a opção "enviar"
+    Then A opção "enviar" está indisponível
+        And ainda vejo o campo "Adicione um comentário" vazio
