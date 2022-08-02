@@ -75,8 +75,8 @@ And estou na página "Meus posts"
 And vejo uma "publicação"
 And vejo a opção "Criar post"
 When Eu seleciono a opção "Criar post"
-And digito o texto "#HxH é top dema" na "caixa de texto"
+And digito o texto "#HxH é top de" na "caixa de texto"
 And seleciono a página "perfil"
 Then Eu estou na página "perfil"
 And vejo a mensagem "Rascunho salvo com sucesso" na tela
- 
+
