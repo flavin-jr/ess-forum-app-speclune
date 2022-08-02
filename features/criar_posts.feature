@@ -65,3 +65,17 @@ And  eu substituo a frase "lol é muito bom #topdms" presente na "caixa de texto
 And eu seleciono a opção "Cancelar"
 Then eu ainda vejo a frase "lol é muito bom #topdms" na minha lista de posts
 And eu ainda estou na página "Meus posts"
+
+
+
+Scenario: Acessar uma página enquanto cria um post
+Given Estou logado com o usuário "flavin_DoPneu123"
+And estou na página "Meus posts"
+And vejo uma "publicação"
+And vejo a opção "Criar post"
+When Eu seleciono a opção "Criar post"
+And digito o texto "#HxH é top dema" na "caixa de texto"
+And seleciono a página "perfil"
+Then Eu estou na página "perfil"
+And vejo a mensagem "Rascunho salvo com sucesso" na tela
+ 
