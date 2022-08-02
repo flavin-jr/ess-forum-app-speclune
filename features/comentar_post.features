@@ -47,3 +47,13 @@ Scenario: Acessar uma página enquanto comenta em um post
         And seleciono a página "perfil"
     Then Eu estou na página "perfil"
         And nada foi comentado na(o) "publicação"
+
+Scenario: Adicionar uma imagem ao comentar em um post
+    Given Estou logado com o usuário "Alanzoka"
+        And estou na página "publicações"
+        And vejo uma "publicação"
+        And vejo a opção "comentar"
+    When Eu seleciono a opção "comentar"
+        And seleciono a opção "mídia" abaixo do campo "Adicione um comentário"
+    Then Eu ainda estou na "publicação"
+        And vejo opções de "imagens" que estão armazenadas(os) no meu dispositivo
