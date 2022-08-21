@@ -24,7 +24,7 @@ When escrevo a frase "lol é muito" na "Pesquisar por texto"
     And seleciono a opção "Buscar"
 Then eu vejo na tela uma mensagem informando "Nenhum Post encontrado" 
 
-Scenario: Buscar posts por tag que não existe
+Scenario: Buscar posts por tag que existe
 Given estou logado com o usuário "juanzin"
     And estou na página "publicações"
     And vejo um campo "Tags"
