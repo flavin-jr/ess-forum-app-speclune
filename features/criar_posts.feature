@@ -78,5 +78,5 @@ When Eu seleciono a opção "Criar post"
 And digito o texto "#HxH é top de" na "caixa de texto"
 And seleciono a página "perfil"
 Then Eu estou na página "perfil"
-And vejo a mensagem "Rascunho salvo com sucesso" na tela
+And vejo a mensagem "Rascunho descartado" na tela
 
