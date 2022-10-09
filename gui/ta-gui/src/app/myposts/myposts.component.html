@@ -1,23 +1,24 @@
 <html>
-    <div class="container" *ngIf="!(createPost)">
-        <h1>Meus Posts</h1>
-        <div class="container-btn">
-            <button (click)="toglleCreatePost()">Criar Post</button>
+<div class="container" *ngIf="!(createPost)">
+    <h1>Meus Posts</h1>
+
+    <button (click)="toglleCreatePost()">Criar Post</button>
+
+</div>
+
+<div class="container-input" *ngIf="createPost">
+    <div class="container-back">
+        <h1>Criar Post</h1>
+        <button (click)="toglleCreatePost()">Voltar</button>
+
+    </div>
+    <div class="post-container">
+        <textarea name="post" id="post" cols="70" rows="16" placeholder="Digite aqui ..."></textarea>
+        <div class="btn-container">
+            <button>Postar</button>
+            <button>Cancelar</button>
         </div>
     </div>
+</div>
 
-    <div class="container-input" *ngIf="createPost">
-        <div class="container-back">
-            <h1>Criar Post</h1>
-            <button>Voltar</button>
-
-        </div>
-        <input type="text">
-        <button>Postar</button>
-        <button>Cancelar</button>
-    </div>
 </html>
-
-
-
-
