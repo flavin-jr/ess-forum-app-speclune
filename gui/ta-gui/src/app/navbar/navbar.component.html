@@ -1,0 +1,33 @@
+<html>
+<nav class="nav-container">
+    <div class="logo-container">
+        <a href="#">
+            <img class="logo" src="/assets/logo_transparent.jpg" alt="logo">
+        </a>
+        <a href="#">
+            <h1>Speclune</h1>
+        </a>
+    </div>
+    <ul class="menu">
+        <li><input type="text" placeholder="   pesquisar. . ." class="pesquisar"></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">News</a></li>
+    </ul>
+    <img class="menu-ham" src="assets/ham.jpg" alt="menu" (click)="toggle()">
+</nav>
+<div class="menu-toggle" *ngIf="toggleMenu">
+    <img (click)="toggle()" class="close-menu" src="assets/x.png" alt="x">
+
+    <ul>
+        <li class="meus-posts"><a (click)="toggle()"routerLink="/my_posts">Meus posts</a></li>
+        <li class="news"><a href="#">Meus comentários</a></li>
+        <li class="news"><a href="#">publicações</a></li>
+        <li class="news"><a href="#">Sair</a></li>
+        
+
+        
+    </ul>
+</div>
+<router-outlet></router-outlet>
+
+</html>
