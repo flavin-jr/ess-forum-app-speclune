@@ -1,0 +1,23 @@
+<html>
+    <div class="container" *ngIf="!(createPost)">
+        <h1>Meus Posts</h1>
+        <div class="container-btn">
+            <button (click)="toglleCreatePost()">Criar Post</button>
+        </div>
+    </div>
+
+    <div class="container-input" *ngIf="createPost">
+        <div class="container-back">
+            <h1>Criar Post</h1>
+            <button>Voltar</button>
+
+        </div>
+        <input type="text">
+        <button>Postar</button>
+        <button>Cancelar</button>
+    </div>
+</html>
+
+
+
+
