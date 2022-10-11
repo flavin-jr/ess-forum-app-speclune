@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MypostsComponent } from './myposts/myposts.component';
 import { EditpostsComponent } from './editposts/editposts.component';
 import { UserService } from './user.service';
+import { PostsComponent } from './posts/posts.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { UserService } from './user.service';
     NavbarComponent,
     MypostsComponent,
     EditpostsComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
