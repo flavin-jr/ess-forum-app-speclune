@@ -9,9 +9,10 @@ import { User } from '../user';
 })
 export class MypostsComponent implements OnInit {
   createPost: boolean = false;
+  edit = false;
   constructor(private user: UserService) { }
   public userMaster: any;
-  
+  post:string = '';
   ngOnInit(): void {
     this.userMaster = this.user;
     console.log(this.createPost);
@@ -23,5 +24,8 @@ export class MypostsComponent implements OnInit {
     console.log(this.createPost);
   }
   
-
+  public openEdit(post:string): void{
+    this.edit = !this.edit;
+    this.post = post;
+  }
 }

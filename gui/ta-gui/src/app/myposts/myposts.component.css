@@ -34,7 +34,17 @@ html{
     color: white;
 }
 
-
+.edit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+}
+.edit-btn:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+    
+}
 button{
     background-color: #031D44;
     color: white;
@@ -94,7 +104,11 @@ button{
 
 }
 
-
+.svg-icon{
+    position: relative;
+    top: 1px;
+    padding: 2px;
+}
     
 
 
