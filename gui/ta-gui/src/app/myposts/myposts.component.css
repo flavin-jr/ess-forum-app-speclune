@@ -11,7 +11,40 @@ html{
     padding: 40px;
     
 }
+.container-title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+.container-posts{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.container-posts div{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 10px;
+    background-color: #031D44;
+    color: white;
+}
+
+.edit-btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+}
+.edit-btn:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+    
+}
 button{
     background-color: #031D44;
     color: white;
@@ -27,6 +60,7 @@ button{
     display: flex;
     flex-direction: column;
 }
+
 .container-back{
     display: flex;
     align-items: center;
@@ -39,16 +73,18 @@ button{
 .post-container{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: rgba(128, 128, 128, 0.5);
     border-radius: 10px;
     position: absolute;
+
     top: 260px;
-    padding: 40px;
+    padding: 40px; 
     
     
 
 }
+
 .post-container textarea{
     text-align: left;
     border: none;
@@ -68,7 +104,11 @@ button{
 
 }
 
-
+.svg-icon{
+    position: relative;
+    top: 1px;
+    padding: 2px;
+}
     
 
 

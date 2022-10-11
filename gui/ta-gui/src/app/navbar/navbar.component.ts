@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private user:UserService) { }
   toggleMenu = false;
-  
+  public userMaster:any;
   ngOnInit(): void {
+    this.userMaster = this.user;
   }
   toggle():void{
     this.toggleMenu = !this.toggleMenu;
