@@ -1,10 +1,10 @@
 export class User {
-    userName: string;
+    username: string;
     myPosts: Array<string>;
     myComments: Array<string>;
 
     constructor() {
-        this.userName = "rgsa01";
+        this.username = "rgsa01";
         this.myPosts = [];
         this.myComments = [];
     }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { UserService } from '../user.service';
+
 @Component({
   selector: 'app-posts',
   templateUrl: './posts.component.html',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private user: UserService) { }
+  public userMaster: any;
+  comment: boolean = false;
+  
   ngOnInit(): void {
+    this.userMaster = this.user;
+    console.log(this.comment);
+  }
+  toggleComment():void{
+    this.comment = !this.comment;
+    console.log(this.comment);
   }
 
 }
