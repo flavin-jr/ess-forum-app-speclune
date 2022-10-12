@@ -1,0 +1,61 @@
+html{
+    padding: 40px;
+}
+
+
+.username{
+    padding: 0px;
+    margin-bottom: 10px;
+    color: #888888;
+
+}
+
+.container{
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.5);
+    border-radius: 10px;
+    padding: 40px;
+    
+}
+
+.container-posts{
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.container-posts div{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #031D44;
+    color: white;
+}
+
+.btn-comment{
+    background-color: transparent;
+    border: none;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 40px;
+    height: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.btn-comment:hover{
+    background-color: rgba(128, 128, 128, 0.5);
+}
+
+svg{
+    color: green;
+}

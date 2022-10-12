@@ -24,10 +24,24 @@ export class UserService {
 
     console.log('Post criado com sucesso!!!');
   };
+  addComment(comment: string): void {
+    const date = new Date();
+    const dayHour = date.toLocaleString('pt-br');
+    comment = `" ${comment} "  -- ${dayHour}`; 
+    this.userMaster.myComments.push(comment);
+    console.log('Comment realizado com sucesso!!!');
+  };
   getPosts() {
     return this.userMaster.myPosts;
   };
+
+  getUsername(){
+    return this.userMaster.username
+  };
+  
+
   attPost(post: string, index: number): void {
+
     
       const date = new Date();
       const dayHour = date.toLocaleString('pt-br');
@@ -39,7 +53,7 @@ export class UserService {
       console.log(this.getPosts());
       console.log(this.userMaster.myPosts[index]);
       console.log(post);
-    }
+   };
   };
   
 
