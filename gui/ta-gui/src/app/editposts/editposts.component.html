@@ -8,10 +8,10 @@
 
 <div class="post-container">
 
-    <textarea name="post"  cols="70" rows="16" placeholder="Digite aqui ...">{{post}}</textarea>
+    <textarea  cols="70" rows="16" placeholder="Digite aqui ..." [(ngModel)]="post">{{post}}</textarea>
     <div class="btn-container">
         
-        <button>Salvar alterações</button>
+        <button (click)="userMaster.attPost(post,index)">Salvar alterações</button>
         <button>Cancelar</button>
     </div>
 

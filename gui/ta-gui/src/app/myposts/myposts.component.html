@@ -7,9 +7,9 @@
 
 </div>
 <div class="container-posts" *ngIf="userMaster.getPosts().length > 0 && (!createPost)">
-    <div *ngFor="let posts of userMaster.getPosts()">
-        <div class="post-list">{{posts}}</div>
-        <button class="edit-btn" (click)="openEdit(posts)">
+    <div *ngFor="let post of getBindedEntries">
+        <div class="post-list">{{post[1]}}</div>
+        <button class="edit-btn" (click)="openEdit(post[1], post[0])">
             
                 <svg class="svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -45,5 +45,5 @@
 </html>
 
 <html *ngIf="edit">
-    <app-editposts [post]="post"></app-editposts>
+    <app-editposts [post]="post" [index]="index"></app-editposts>
 </html>

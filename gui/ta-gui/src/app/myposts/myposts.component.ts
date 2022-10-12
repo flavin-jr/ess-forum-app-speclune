@@ -13,6 +13,7 @@ export class MypostsComponent implements OnInit {
   constructor(private user: UserService) { }
   public userMaster: any;
   post:string = '';
+  index:number = -1;
   ngOnInit(): void {
     this.userMaster = this.user;
     console.log(this.createPost);
@@ -20,12 +21,18 @@ export class MypostsComponent implements OnInit {
   }
   public toglleCreatePost(): void {
     this.createPost = !this.createPost;
-    console.log(this.userMaster.getPosts());
-    console.log(this.createPost);
+    
   }
-  
-  public openEdit(post:string): void{
+  public toggleOpenEdit():void{
     this.edit = !this.edit;
-    this.post = post;
+
+  }
+  public openEdit(post:string, index: number): void{
+    this.toggleOpenEdit();
+    this.post = post.replace(/[0-9"-/:]+/g,'');
+    this.index = index;
+  }
+  get getBindedEntries():Array<any>{
+    return Array.from(this.user.getPosts().entries());
   }
 }

@@ -6,6 +6,7 @@ import { User } from './user';
 })
 export class UserService {
   userMaster = new User();
+  bindedPostKeys:any;
   constructor() {
 
   }
@@ -14,15 +15,29 @@ export class UserService {
     for (let posts of this.userMaster.myPosts) {
       console.log(posts);
     }
-  }
+  };
   addPost(post: string): void {
     const date = new Date();
     const dayHour = date.toLocaleString('pt-br');
     post = `" ${post} "  -- ${dayHour}`; 
     this.userMaster.myPosts.push(post);
     console.log('Post criado com sucesso!!!');
-  }
+  };
   getPosts() {
     return this.userMaster.myPosts;
-  }
+  };
+  attPost(post:string,index:number): void{
+    const date = new Date();
+    const dayHour = date.toLocaleString('pt-br');
+    post = `" ${post} "  -- ${dayHour}`; 
+    
+    this.userMaster.myPosts[index] = post;
+    console.log('Post criado com sucesso!!!');
+
+    console.log(this.getPosts());
+    console.log(this.userMaster.myPosts[index]);
+    console.log(post);
+    
+  };
+
 }

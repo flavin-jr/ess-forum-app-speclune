@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-editposts',
@@ -7,9 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class EditpostsComponent implements OnInit {
 
-  @Input() post:  string | undefined;
-  constructor() { }
-
+  @Input()post!: string;
+  @Input()index!: number;
+  constructor(private user:UserService) { }
+  userMaster = this.user;
   ngOnInit(): void {
     console.log(this.post);
   }
