@@ -28,11 +28,7 @@ export class UserService {
     return this.userMaster.myPosts;
   };
   attPost(post: string, index: number): void {
-    if (!post) {
-      alert('Erro ao editar post!!!');
-
-    }
-    else {
+    
       const date = new Date();
       const dayHour = date.toLocaleString('pt-br');
       post = `" ${post} "  -- ${dayHour}`;
@@ -45,7 +41,5 @@ export class UserService {
       console.log(post);
     }
   };
-  handleError(index: number = -1) {
+  
 
-  }
-}

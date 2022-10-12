@@ -12,7 +12,7 @@ export class EditpostsComponent implements OnInit {
   @Input()index!: number;
   @Input()edit!: boolean;
   msgPostText:string = '';
-  msgPost:boolean = false;
+  msgPost:boolean = true;
   constructor(private user:UserService) { }
   userMaster = this.user;
   ngOnInit(): void {
@@ -22,12 +22,16 @@ export class EditpostsComponent implements OnInit {
     this.edit = !this.edit;
 
   }
-  public handleMsg(msg:string):void{
-    if(msg === 'alt'){
-      this.msgPostText = 'Post alterado com sucesso!!!';
+
+  handleEdit(post: string): void {
+    console.log()
+    if (!post) {
+      this.msgPost = false;
     }
     else{
-      this.msgPostText = 'Erro ao alterar post!!!';
+      this.msgPost = true;
+      this.userMaster.attPost(post,this.index);
+      this.toggleEdit();
     }
   }
   

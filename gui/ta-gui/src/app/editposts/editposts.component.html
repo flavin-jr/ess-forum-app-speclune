@@ -8,11 +8,15 @@
 
 <div class="post-container" *ngIf="edit">
 
-    <textarea cols="70" rows="16" placeholder="Digite aqui ..." [(ngModel)]="post">{{post}}</textarea>
+    <div class="text-container">
+        <textarea  [(ngModel)]="post" cols="70" rows="16" 
+        placeholder="Digite aqui ...">{{post}}</textarea>
+        <p *ngIf="!msgPost">Digite algo !!!</p>
+    </div>
     <div class="btn-container">
 
-        <button (click)="userMaster.attPost(post,index)" (click)="toggleEdit()">Salvar alterações</button>
-        <button (click)="toggleEdit()" >Cancelar</button>
+        <button (click)="handleEdit(post)">Salvar alterações</button>
+        <button (click)="toggleEdit()">Cancelar</button>
     </div>
 
 
