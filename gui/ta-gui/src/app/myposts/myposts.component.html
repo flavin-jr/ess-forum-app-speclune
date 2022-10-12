@@ -7,9 +7,10 @@
 
 </div>
 <div class="container-posts" *ngIf="userMaster.getPosts().length > 0 && (!createPost)">
-    <div *ngFor="let post of getBindedEntries">
+    <div *ngFor="let post of getBindedEntries.reverse()">
         <div class="post-list">{{post[1]}}</div>
         <button class="edit-btn" (click)="openEdit(post[1], post[0])">
+
             
                 <svg class="svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -19,6 +20,7 @@
          
         </button>
     </div>
+
 </div>
 
 <div class="container-input" *ngIf="createPost">
@@ -28,10 +30,13 @@
 
     </div>
     <div class="post-container">
-
-        <textarea name="post" #post cols="70" rows="16" placeholder="Digite aqui ..."></textarea>
+        <div class="text-container">
+            <textarea name="post" [(ngModel)]="post" cols="70" rows="16"
+                placeholder="Digite aqui ...">{{post}}</textarea>
+            <p *ngIf="!msgPost">Digite algo !!!</p>
+        </div>
         <div class="btn-container">
-            <button (click)="userMaster.addPost(post.value)">Postar</button>
+            <button (click)="handlePost(post)">Postar</button>
             <button>Cancelar</button>
         </div>
 
@@ -43,6 +48,10 @@
 
 </html>
 
-<html *ngIf="edit">
-    <app-editposts [post]="post" [index]="index"></app-editposts>
+<div *ngIf="edit">
+    <app-editposts [post]="post" [index]="index" [edit]="edit"></app-editposts>
+</div>
+
+<html>
+
 </html>
