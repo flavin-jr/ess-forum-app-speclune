@@ -1,22 +1,23 @@
 <html>
-<div class="container">
+<div class="container" *ngIf="edit">
 
     <h1>Edição de posts</h1>
-
+    <button (click)="toggleEdit()">Voltar</button>
 
 </div>
 
-<div class="post-container">
+<div class="post-container" *ngIf="edit">
 
-    <textarea  cols="70" rows="16" placeholder="Digite aqui ..." [(ngModel)]="post">{{post}}</textarea>
+    <textarea cols="70" rows="16" placeholder="Digite aqui ..." [(ngModel)]="post">{{post}}</textarea>
     <div class="btn-container">
-        
-        <button (click)="userMaster.attPost(post,index)">Salvar alterações</button>
-        <button>Cancelar</button>
+
+        <button (click)="userMaster.attPost(post,index)" (click)="toggleEdit()">Salvar alterações</button>
+        <button (click)="toggleEdit()" >Cancelar</button>
     </div>
 
 
 
 </div>
+<app-myposts *ngIf="!edit"></app-myposts>
 
 </html>

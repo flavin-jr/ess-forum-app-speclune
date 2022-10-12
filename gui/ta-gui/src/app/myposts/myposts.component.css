@@ -81,8 +81,11 @@ button{
     top: 260px;
     padding: 40px; 
     
-    
 
+}
+.text-container{
+    display: flex;
+    flex-direction: column;
 }
 
 .post-container textarea{
@@ -109,6 +112,13 @@ button{
     top: 1px;
     padding: 2px;
 }
+
+p{
+    color: red;
+    font-size: 15px;
+    position: relative;
+    left:20px;
     
+}
 
 

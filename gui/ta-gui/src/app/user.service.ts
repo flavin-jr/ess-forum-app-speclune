@@ -6,7 +6,7 @@ import { User } from './user';
 })
 export class UserService {
   userMaster = new User();
-  bindedPostKeys:any;
+  bindedPostKeys: any;
   constructor() {
 
   }
@@ -19,25 +19,33 @@ export class UserService {
   addPost(post: string): void {
     const date = new Date();
     const dayHour = date.toLocaleString('pt-br');
-    post = `" ${post} "  -- ${dayHour}`; 
+    post = `" ${post} "  -- ${dayHour}`;
     this.userMaster.myPosts.push(post);
+
     console.log('Post criado com sucesso!!!');
   };
   getPosts() {
     return this.userMaster.myPosts;
   };
-  attPost(post:string,index:number): void{
-    const date = new Date();
-    const dayHour = date.toLocaleString('pt-br');
-    post = `" ${post} "  -- ${dayHour}`; 
-    
-    this.userMaster.myPosts[index] = post;
-    console.log('Post criado com sucesso!!!');
+  attPost(post: string, index: number): void {
+    if (!post) {
+      alert('Erro ao editar post!!!');
 
-    console.log(this.getPosts());
-    console.log(this.userMaster.myPosts[index]);
-    console.log(post);
-    
+    }
+    else {
+      const date = new Date();
+      const dayHour = date.toLocaleString('pt-br');
+      post = `" ${post} "  -- ${dayHour}`;
+
+      this.userMaster.myPosts[index] = post;
+      console.log('Post editado com sucesso!!!');
+
+      console.log(this.getPosts());
+      console.log(this.userMaster.myPosts[index]);
+      console.log(post);
+    }
   };
+  handleError(index: number = -1) {
 
+  }
 }

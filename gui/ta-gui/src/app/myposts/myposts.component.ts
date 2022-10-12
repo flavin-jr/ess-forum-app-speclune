@@ -12,27 +12,43 @@ export class MypostsComponent implements OnInit {
   edit = false;
   constructor(private user: UserService) { }
   public userMaster: any;
-  post:string = '';
-  index:number = -1;
+  post: string = '';
+  index: number = -1;
+  msgPost: boolean = true;
+  
   ngOnInit(): void {
     this.userMaster = this.user;
     console.log(this.createPost);
-    
+
   }
   public toglleCreatePost(): void {
     this.createPost = !this.createPost;
-    
+
   }
-  public toggleOpenEdit():void{
+  public toggleOpenEdit(): void {
     this.edit = !this.edit;
 
   }
-  public openEdit(post:string, index: number): void{
+  public openEdit(post: string, index: number): void {
     this.toggleOpenEdit();
-    this.post = post.replace(/[0-9"-/:]+/g,'');
+    this.post = post.replace(/[0-9"-/:]+/g, '');
     this.index = index;
   }
-  get getBindedEntries():Array<any>{
+  get getBindedEntries(): Array<any> {
     return Array.from(this.user.getPosts().entries());
+  }
+  handleClear(): void {
+    this.post = '';
+  }
+
+  handlePost(post: string): void {
+    if (!post) {
+      this.msgPost = false;
+    }
+    else{
+      this.msgPost = true;
+      this.userMaster.addPost(post);
+      this.handleClear();
+    }
   }
 }

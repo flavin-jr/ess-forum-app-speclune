@@ -1,10 +1,11 @@
 .container{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     background-color: rgba(128, 128, 128, 0.5);
     border-radius: 10px;
     padding: 40px;
+    margin: 30px;
 }
 .post-container{
     display: flex;
@@ -15,7 +16,8 @@
     position: absolute;
 
     top: 260px;
-    padding: 40px; 
+    padding: 40px;
+    margin: 30px;
     
 }
 .post-container textarea{
