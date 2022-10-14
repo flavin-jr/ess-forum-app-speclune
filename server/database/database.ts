@@ -9,7 +9,7 @@ export class DBService {
 
     constructor(name: string) {
         this.name = name;
-        this.path = __dirname + '/files/' + name + '.json';
+        this.path = __dirname + '/' + name + '.json';
         this.read();
     }
 
