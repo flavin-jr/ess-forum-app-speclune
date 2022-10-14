@@ -1,0 +1,49 @@
+{
+    "clients": [
+        {
+            "id": 0,
+            "username": "Renam01",
+            "myPosts": [
+                " \" oi \" -- 14/10/2022 02:05:34",
+                "\" pessoal o vasco da gama ta maneirinho sacoe \" -- 14/10/2022 02:05:34"
+            ],
+            "myCOmments": []
+        },
+        {
+            "id": 1,
+            "username": "flavin09",
+            "myPosts": [
+                " \" Achei bem legal a nova UI do valorant \" -- 14/08/2022 01:00:34",
+
+                " \" Meu amigo, quer skin horrivel essa nova do vava \" -- 01/10/2022 22:05:34"
+
+            ],
+            "myCOmments": []
+        },
+        {
+            "id": 3,
+            "username": "bebeto09",
+            "myPosts": [
+                "\" eh quase ne quase \" -- 14/10/2022 02:05:34",
+                "\" ja eh quase, tira o quase \" -- 08/10/2022 01:05:34"
+            ],
+            "myCOmments": []
+        },
+        {
+            "id": 4,
+            "username": "heitchosf",
+            "myPosts": [
+                "\" Quando lança o novo personagem do vava ? \" -- 08/10/2022 01:05:34"
+                ,
+                "\" Eh pra respeitar esse server do rl, bom dms, slk. \" -- 08/10/2022 11:05:34"
+            ],
+            "myCOmments": []
+        },
+        {
+            "id": 5,
+            "username": "gaspar",
+            "myPosts": [],
+            "myCOmments": []
+        }
+    ]
+}
