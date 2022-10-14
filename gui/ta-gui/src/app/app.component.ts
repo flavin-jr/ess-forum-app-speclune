@@ -9,7 +9,7 @@ import { UserService } from './user.service';
 export class AppComponent {
   title = 'Speclune';
 
-  constructor(private user:UserService){}
+  constructor(){}
 
 
   

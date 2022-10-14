@@ -30,7 +30,7 @@ export class EditpostsComponent implements OnInit {
     }
     else{
       this.msgPost = true;
-      this.userMaster.attPost(post,this.index);
+      //this.userMaster.attPost(post,this.index);
       this.toggleEdit();
     }
   }

@@ -6,7 +6,7 @@
     <button (click)="toglleCreatePost()">Criar Post</button>
 
 </div>
-<div class="container-posts" *ngIf="userMaster.getPosts().length > 0 && (!createPost)">
+<div class="container-posts" *ngIf="allPosts.length > 0 && (!createPost)">
     <div *ngFor="let post of getBindedEntries.reverse()">
         <div class="post-list">{{post[1]}}</div>
         <button class="edit-btn" (click)="openEdit(post[1], post[0])">

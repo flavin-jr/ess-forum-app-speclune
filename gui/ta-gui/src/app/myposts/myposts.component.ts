@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-
+import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
 @Component({
   selector: 'app-myposts',
@@ -11,15 +11,52 @@ export class MypostsComponent implements OnInit {
   createPost: boolean = false;
   edit = false;
   constructor(private user: UserService) { }
-  public userMaster: any;
   post: string = '';
   index: number = -1;
   msgPost: boolean = true;
-  
-  ngOnInit(): void {
-    this.userMaster = this.user;
-    console.log(this.createPost);
+  allPosts:Array<string> = [];
+  userMaster:User = {
+    id: -1,
+    username: '',
+    myPosts: [],
+    myComments: []
+  };
 
+  ngOnInit(): void {
+    this.getUserMaster()
+
+  }
+  getUserMaster(){
+    this.user.getUser()
+    .subscribe(data=>{
+      this.userMaster = new User(data);
+      this.allPosts = [...this.userMaster.myPosts];
+
+      this.getPosts();
+    })
+
+  
+  }
+  getPosts():string[] {
+    
+    console.log(this.allPosts);
+    return this.allPosts
+
+  }
+  public formatedPost(post:string): string{
+    const date = new Date();
+    const dayHour = date.toLocaleString('pt-br');
+    post = `" ${post} "  -- ${dayHour}`;
+    return post
+  }
+  addPost(post:string):void{
+    post = this.formatedPost(post)
+    this.allPosts.push(post);
+    this.userMaster.myPosts.push(post);
+    this.user.addPost(this.userMaster)
+    .subscribe(res=>{console.log(res)});
+    console.log(this.allPosts);
+    
   }
   public toglleCreatePost(): void {
     this.createPost = !this.createPost;
@@ -35,7 +72,7 @@ export class MypostsComponent implements OnInit {
     this.index = index;
   }
   get getBindedEntries(): Array<any> {
-    return Array.from(this.user.getPosts().entries());
+    return Array.from(this.getPosts().entries());
   }
   handleClear(): void {
     this.post = '';
@@ -45,9 +82,9 @@ export class MypostsComponent implements OnInit {
     if (!post) {
       this.msgPost = false;
     }
-    else{
+    else {
       this.msgPost = true;
-      this.userMaster.addPost(post);
+      this.addPost(post);
       this.handleClear();
     }
   }

@@ -8,11 +8,11 @@ import { UserService } from '../user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private user:UserService) { }
+  constructor() { }
   toggleMenu = false;
   public userMaster:any;
   ngOnInit(): void {
-    this.userMaster = this.user;
+   
   }
   toggle():void{
     this.toggleMenu = !this.toggleMenu;
