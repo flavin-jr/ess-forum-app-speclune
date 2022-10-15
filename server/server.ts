@@ -24,13 +24,17 @@ app.get('/my_posts', (req:express.Request,res:express.Response)=>{
 });
 app.post('/my_posts',(req:express.Request,res:express.Response)=>{
   const user = req.body;
-  userService.deleteData(2);
+  userService.deleteData(3);
   userService.addData(user);
   console.log(req.body);
   // const user = userService.addPost(myPosts.post,myPosts.id);
   // console.log(user);
   // res.send(user);
 })
+
+app.put('edit_post', (req:express.Request, res:express.Response)=>{
+  
+});
 var server = app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })

@@ -1,12 +1,12 @@
 <html>
-<div class="container" *ngIf="edit">
+<div class="container" >
 
     <h1>Edição de posts</h1>
-    <button (click)="toggleEdit()">Voltar</button>
+    <button routerLink="/my_posts">Voltar</button>
 
 </div>
 
-<div class="post-container" *ngIf="edit">
+<div class="post-container" >
 
     <div class="text-container">
         <textarea  [(ngModel)]="post" cols="70" rows="16" 
@@ -16,12 +16,13 @@
     <div class="btn-container">
 
         <button (click)="handleEdit(post)">Salvar alterações</button>
-        <button (click)="toggleEdit()">Cancelar</button>
+        <button >Cancelar</button>
     </div>
 
 
 
 </div>
-<app-myposts *ngIf="!edit"></app-myposts>
+
 
 </html>
+<router-outlet></router-outlet>

@@ -7,7 +7,7 @@ import { UserService } from '../user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-
+  
   constructor() { }
   toggleMenu = false;
   public userMaster:any;
@@ -17,4 +17,5 @@ export class NavbarComponent implements OnInit {
   toggle():void{
     this.toggleMenu = !this.toggleMenu;
   }
+  
 }

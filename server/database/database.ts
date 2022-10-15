@@ -42,6 +42,7 @@ export class DBService {
         const userDelete = users.find((value:User,index:number)=>{
             if(value.id === id){
                 indice = index;
+                console.log(`Index do usuario master no db: ${indice}`);
             }
         });
 

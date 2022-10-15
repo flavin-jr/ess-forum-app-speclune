@@ -39,7 +39,6 @@ export class MypostsComponent implements OnInit {
   }
   getPosts():string[] {
     
-    console.log(this.allPosts);
     return this.allPosts
 
   }
@@ -54,7 +53,7 @@ export class MypostsComponent implements OnInit {
     this.allPosts.push(post);
     this.userMaster.myPosts.push(post);
     this.user.addPost(this.userMaster)
-    .subscribe(res=>{console.log(res)});
+    .subscribe(res=>{console.log("Poste adicionado ao BD!!!")});
     console.log(this.allPosts);
     
   }
@@ -62,15 +61,11 @@ export class MypostsComponent implements OnInit {
     this.createPost = !this.createPost;
 
   }
-  public toggleOpenEdit(): void {
+  public toggleEdit(): void {
     this.edit = !this.edit;
 
   }
-  public openEdit(post: string, index: number): void {
-    this.toggleOpenEdit();
-    this.post = post.replace(/[0-9"-/:]+/g, '');
-    this.index = index;
-  }
+  
   get getBindedEntries(): Array<any> {
     return Array.from(this.getPosts().entries());
   }
