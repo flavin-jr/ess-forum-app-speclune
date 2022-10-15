@@ -46,5 +46,12 @@ export class EditpostsComponent implements OnInit {
   attPost(post:string){
     this.userMaster.myPosts[this.index] = this.formatedPost(post);
     console.log(this.userMaster);
+    const id:number = this.userMaster.id;
+    console.log(id);
+
+    this.user.updatePost(this.formatedPost(post),id,this.index)
+    .subscribe(res=>{
+      console.log('Post editado com sucesso!!!!');
+    });
   }
 }

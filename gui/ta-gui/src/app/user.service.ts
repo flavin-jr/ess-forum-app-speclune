@@ -22,44 +22,10 @@ export class UserService {
     var body = user;
     return this.http.post(this.taURL + "/my_posts",body);
   }
-  // addPost(post: string): Observable<any> {
-  //   const date = new Date();
-  //   const dayHour = date.toLocaleString('pt-br');
-  //   post = `" ${post} "  -- ${dayHour}`;
-
-  //   return this.http.post(this.taURL + "my_posts");
-
-  // };
-  // addComment(comment: string): void {
-  //   const date = new Date();
-  //   const dayHour = date.toLocaleString('pt-br');
-  //   comment = `" ${comment} "  -- ${dayHour}`; 
-  //   this.userMaster.myComments.push(comment);
-  //   console.log('Comment realizado com sucesso!!!');
-  // };
-  // getPosts() {
-  //   return this.userMaster.myPosts;
-  // };
-
-  // getUsername(){
-  //   return this.userMaster.username
-  // };
+  updatePost(post:string, id:number,index:number){
+    return this.http.put(this.taURL + "/edit_post",[post,id,index]);
+  }
   
-
-  // attPost(post: string, index: number): void {
-
-    
-  //     const date = new Date();
-  //     const dayHour = date.toLocaleString('pt-br');
-  //     post = `" ${post} "  -- ${dayHour}`;
-
-  //     this.userMaster.myPosts[index] = post;
-  //     console.log('Post editado com sucesso!!!');
-
-  //     console.log(this.getPosts());
-  //     console.log(this.userMaster.myPosts[index]);
-  //     console.log(post);
-  //  };
   };
   
 

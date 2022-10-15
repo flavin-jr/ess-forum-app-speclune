@@ -41,7 +41,9 @@ export class UserService {
         return
     }
 
-   
+    updateData(data:Array<any>){
+        return this.users.updatePost(data[0],data[1],data[2]);
+    }
     deleteData(index:number){
         return this.users.delete(index);
     }

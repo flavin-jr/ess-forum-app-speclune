@@ -51,9 +51,20 @@ export class DBService {
         this.write();
     }
 
-    update(index: any, item: any) {
-        this.data[this.name].splice(index, 1, item);
+    updatePost(post:string, id:number, index:number) {
+        
+        var indice:number = -1;
+        const users:User[] = this.getData()
+        const userDelete = users.find((value:User,index:number)=>{
+            if(value.id === id){
+                indice = index;
+                console.log(`Index do usuario master no db: ${indice}`);
+            }
+        });
+
+        this.data[this.name][indice].myPosts[index] = post;
         this.write();
+        // console.log(this.getData());
     }
 }
 
