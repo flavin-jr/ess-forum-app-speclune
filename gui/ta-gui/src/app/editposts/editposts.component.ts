@@ -13,6 +13,7 @@ export class EditpostsComponent implements OnInit {
   index:number = -1;
   msgPostText:string = '';
   msgPost:boolean = true;
+  msgSucess:boolean = false;
   constructor(private user:UserService,private router:Router ,private activatedRoute:ActivatedRoute) { }
   ngOnInit(): void {
     this.userMaster = history.state[0];
@@ -23,6 +24,7 @@ export class EditpostsComponent implements OnInit {
     console.log(this.post);
   
   }
+
   handleHeaderPost(post:string){
     this.post = post.replace(/[0-9"-/:]+/g, '');
   }
@@ -34,7 +36,11 @@ export class EditpostsComponent implements OnInit {
     else{
       this.msgPost = true;
       this.attPost(post);
+      this.msgSucess = true;
+      this.sleep(2500).then(()=>{
+      this.msgSucess = false;
       this.router.navigateByUrl('/my_posts');
+      })
     }
   }
   public formatedPost(post:string): string{
@@ -53,5 +59,9 @@ export class EditpostsComponent implements OnInit {
     .subscribe(res=>{
       console.log('Post editado com sucesso!!!!');
     });
+
+  }
+  sleep(ms:number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }

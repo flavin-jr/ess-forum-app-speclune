@@ -19,7 +19,9 @@ export class UserService {
     
   };
   addPost(user:User){
-    var body = user;
+    const body = user;
+    console.log(body);
+
     return this.http.post(this.taURL + "/my_posts",body);
   }
   updatePost(post:string, id:number,index:number){
