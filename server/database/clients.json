@@ -7,7 +7,7 @@
                 " \" oi \" -- 14/10/2022 02:05:34",
                 "\" pessoal o vasco da gama ta maneirinho sacoe \" -- 14/10/2022 02:05:34"
             ],
-            "myCOmments": []
+            "comments": [[{"id":1,"comment":"Eae meu vei"},{"id":1,"comment":"Fala!"},{"id":4, "comment": "Hoy"}],[{"id":3, "comment": "VASCOO!!"}]]
         },
         {
             "id": 1,
@@ -18,7 +18,7 @@
                 " \" Meu amigo, quer skin horrivel essa nova do vava \" -- 01/10/2022 22:05:34"
 
             ],
-            "myCOmments": []
+            "comments": []
         },
         {
             "id": 3,
@@ -27,7 +27,7 @@
                 "\" eh quase ne quase \" -- 14/10/2022 02:05:34",
                 "\" ja eh quase, tira o quase \" -- 08/10/2022 01:05:34"
             ],
-            "myCOmments": []
+            "comments": []
         },
         {
             "id": 4,
@@ -37,13 +37,13 @@
                 ,
                 "\" Eh pra respeitar esse server do rl, bom dms, slk. \" -- 08/10/2022 11:05:34"
             ],
-            "myCOmments": []
+            "comments": []
         },
         {
             "id": 5,
             "username": "gaspar",
             "myPosts": [],
-            "myCOmments": []
+            "comments": []
         }
     ]
 }
