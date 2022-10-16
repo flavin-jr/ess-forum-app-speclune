@@ -5,7 +5,6 @@ export class User{
     comments: Array<Array<object>>;
 
 
-
     constructor(user:User){
         this.id = user.id;
         this.username = user.username;

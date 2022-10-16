@@ -6,7 +6,7 @@ html{
 .username{
     padding: 0px;
     margin-bottom: 10px;
-    color: #888888;
+    color: #00c594;
 
 }
 
@@ -27,7 +27,7 @@ html{
     padding: 40px;
 }
 
-.container-posts div{
+.post{
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -35,6 +35,17 @@ html{
     margin: 20px;
     padding: 20px;
     background-color: #031D44;
+    color: white;
+}
+
+.comment{
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #007e1b;
     color: white;
 }
 
