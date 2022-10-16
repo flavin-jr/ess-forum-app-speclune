@@ -17,13 +17,17 @@ app.use(cors());
 
 app.use(bodyParser.json());
 var userService: UserService = new UserService();
-
+app.get('/', (req:express.Request,res:express.Response)=>{
+  const users = userService.get();
+  res.send(users);
+});
 app.get('/my_posts', (req:express.Request,res:express.Response)=>{
     const users = userService.getUserById(3);
     res.send(users);
 });
 app.post('/my_posts',(req:express.Request,res:express.Response)=>{
   const user = req.body;
+  console.log(user);
   userService.deleteData(3);
   userService.addData(user);
   // console.log(req.body);

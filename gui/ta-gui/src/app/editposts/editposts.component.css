@@ -47,12 +47,24 @@ button{
     font-size: 20px;
     cursor: pointer;
 }
-p{
+.text-container p{
     color: red;
     font-size: 15px;
     position: relative;
     left:20px;
     top: 10px;
+
     
+}
+.msg-sucess{
+    background-color: green;
+    width: 250px;
+    height: 50px;
+    border: none;
+    border-radius: 20px;
+    color: aliceblue;
     
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -2,6 +2,9 @@
 <div class="container" >
 
     <h1>Edição de posts</h1>
+    <div class="msg-sucess" *ngIf="msgSucess" >
+        <p>Post editado com sucesso !</p>
+    </div>
     <button routerLink="/my_posts">Voltar</button>
 
 </div>
@@ -16,7 +19,7 @@
     <div class="btn-container">
 
         <button (click)="handleEdit(post)">Salvar alterações</button>
-        <button >Cancelar</button>
+        <button routerLink="/my_posts" >Cancelar</button>
     </div>
 
 

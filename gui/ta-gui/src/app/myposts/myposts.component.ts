@@ -14,6 +14,7 @@ export class MypostsComponent implements OnInit {
   post: string = '';
   index: number = -1;
   msgPost: boolean = true;
+  msgSucess: boolean = false;
   allPosts:Array<string> = [];
   userMaster:User = {
     id: -1,
@@ -29,7 +30,7 @@ export class MypostsComponent implements OnInit {
   getUserMaster(){
     this.user.getUser()
     .subscribe(data=>{
-      this.userMaster = new User(data);
+      this.userMaster =  new User(data);
       this.allPosts = [...this.userMaster.myPosts];
 
       this.getPosts();
@@ -57,7 +58,7 @@ export class MypostsComponent implements OnInit {
     console.log(this.allPosts);
     
   }
-  public toglleCreatePost(): void {
+  public toggleCreatePost(): void {
     this.createPost = !this.createPost;
 
   }
@@ -81,6 +82,15 @@ export class MypostsComponent implements OnInit {
       this.msgPost = true;
       this.addPost(post);
       this.handleClear();
+      this.toggleCreatePost();
+      this.msgSucess = true;
+      this.sleep(2500).then(()=>{
+        this.msgSucess = false;
+      })
     }
+  }
+  
+  sleep(ms:number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
   }
 }

@@ -3,8 +3,10 @@
 <div class="container" *ngIf="!(createPost)">
 
     <h1>Meus Posts</h1>
-
-    <button (click)="toglleCreatePost()">Criar Post</button>
+    <div class="msg-sucess" *ngIf="msgSucess" >
+        <p>Post criado com sucesso !</p>
+    </div>
+    <button (click)="toggleCreatePost()">Criar Post</button>
 
 </div>
 <div class="container-posts" *ngIf="allPosts.length > 0 && (!createPost)">
@@ -27,7 +29,7 @@
 <div class="container-input" *ngIf="createPost">
     <div class="container-back">
         <h1>Criar Post</h1>
-        <button (click)="toglleCreatePost()">Voltar</button>
+        <button (click)="toggleCreatePost()">Voltar</button>
 
     </div>
     <div class="post-container">
@@ -40,12 +42,14 @@
             <button (click)="handlePost(post)">Postar</button>
             <button>Cancelar</button>
         </div>
-
+        
 
 
     </div>
+    
 
 </div>
+
 </html>
 
 
