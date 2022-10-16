@@ -18,6 +18,10 @@ export class UserService {
     return this.http.get(this.taURL + "/my_posts");
     
   };
+  getPosts():Observable<any>{
+    return this.http.get(this.taURL + "/posts");
+    
+  };
   addPost(user:User){
     var body = user;
     return this.http.post(this.taURL + "/my_posts",body);

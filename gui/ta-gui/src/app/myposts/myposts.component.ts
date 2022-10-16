@@ -19,7 +19,7 @@ export class MypostsComponent implements OnInit {
     id: -1,
     username: '',
     myPosts: [],
-    myComments: []
+    comments: []
   };
 
   ngOnInit(): void {

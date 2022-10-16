@@ -31,6 +31,10 @@ app.post('/my_posts',(req:express.Request,res:express.Response)=>{
   // console.log(user);
   // res.send(user);
 })
+app.get('/posts', (req:express.Request,res:express.Response)=>{
+  const users = userService.get();
+  res.send(users);
+});
 
 app.put('/edit_post', (req:express.Request, res:express.Response)=>{
   const data:Array<any> = req.body;
