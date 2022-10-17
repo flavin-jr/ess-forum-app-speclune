@@ -19,13 +19,19 @@
     <img (click)="toggle()" class="close-menu" src="/assets/x.png" alt="x">
 
     <ul>
-        <li class="meus-posts"><a (click)="toggle()"routerLink="/my_posts" >Meus posts</a></li>
-        <li class="news"><a (click)="toggle()"routerLink="/posts">Publicações</a></li>
+        <li>
+            <div class="info-container">
+                <img src="./../../assets/avatar.svg" alt="avatar">
+                <p id="username">{{username}}</p>
+            </div>
+        </li>
+        <li class="meus-posts"><a (click)="toggle()" routerLink="/my_posts">Meus posts</a></li>
+        <li class="news"><a (click)="toggle()" routerLink="/posts">Publicações</a></li>
         <li class="news"><a href="#">Meus comentários</a></li>
         <li class="news"><a href="#">Sair</a></li>
-        
 
-        
+
+
     </ul>
 </div>
 

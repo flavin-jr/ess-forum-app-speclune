@@ -59,7 +59,7 @@ a{
     top: 0;
     right: 0;
     width: 17%;
-    height: 50%;
+    height: 51%;
     background-color: #031D44;
 }
 .menu-toggle ul{
@@ -73,7 +73,7 @@ a{
 .menu-toggle ul li{
     width: 100%;
     position: relative;
-    top: 120px;
+    top: 50px;
     padding: 30px;
     text-align: center;
 
@@ -82,6 +82,37 @@ a{
 }
 .menu-toggle ul li:hover{
     background-color: rgba(128, 128, 128,0.5);
+    border-radius: 30px;
+}
+.menu-toggle ul li:first-child:hover{
+    background-color: #031D44;
+}
+.menu-toggle ul li:first-child{
+    width: 100%;
+    position: relative;
+    top: 50px;
+    padding: 20px;
+    padding-right: 10px;
+    text-align: center;
+
+    
+    
+}
+.info-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    color: white;
+    gap: 10px;
+    border-radius: 30px;
+    padding-right: 10px;
+    
+    
+}
+img{
+    height: 65px;
+    width: 65px;
 }
 
 
