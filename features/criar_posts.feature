@@ -5,78 +5,54 @@ so that eu possa contribuir e gerar críticas sobre o conteúdo que eu consumi
 
 
 Scenario: adicionar um novo post com texto
-Given estou logado com o usuário "flavin_DoPneu123"
+Given eu estou logado com o usuário "bebeto09"
 And eu estou na página "Meus posts"
-And vejo a opção "Criar post"
-When eu seleciono a "Criar post"
-And escrevo a frase "lol é muito" na "caixa de texto"
-And eu seleciono a opção "postar"
+When eu seleciono a opção "Criar Post"
+And escrevo a frase "lol é muito bom #topdms" na caixa de texto
+And eu seleciono a opção "Postar"
 Then eu vejo na tela uma mensagem de sucesso
 And eu ainda estou na página "Meus posts"
-And eu vejo a frase "lol é muito bom #topdms" na minha lista de posts
-
+And eu vejo a frase "lol é muito bom #topdms" no topo da minha lista de posts
 
 Scenario: adicionar um novo post sem texto
-Given estou logado com o usuário "flavin_DoPneu123"
+Given eu estou logado com o usuário "bebeto09"
 And eu estou na página "Meus posts"
-And vejo a opção "Criar post"
-When eu seleciono a "Criar post"
-And escrevo a frase "" na "caixa de texto"
-And eu seleciono a opção "postar"
+When eu seleciono a opção "Criar Post"
+And escrevo a frase "" na caixa de texto
+And eu seleciono a opção "Postar"
 Then eu vejo na tela uma mensagem de erro
 And eu ainda estou na página "Meus posts"
 And eu nao vejo a frase "" na minha lista de posts
 
-
 Scenario: editar um post existente com sucesso
-Given estou logado com o usuário "flavin_DoPneu123"
+Given eu estou logado com o usuário "bebeto09"
 And eu estou na página "Meus posts"
 And eu vejo uma lista de posts
-And eu vejo a opção "editar post"
-When eu seleciono a "editar post"
-And  eu substituo a frase "lol é muito bom #topdms" presente na "caixa de texto" pela frase "lol é um lixo #Naojoguem"
+When eu seleciono, no post mais recente, a opção "editar"
+And eu substituo a frase do post por "lol é um lixo #Naojoguem"
 And eu seleciono a opção "Salvar alterações"
 Then eu vejo na tela uma mensagem de sucesso
 And eu ainda estou na página "Meus posts"
 And eu nao vejo a frase "lol é muito bom #topdms" na minha lista de posts
-And eu vejo a frase "lol é um lixo #Naojoguem" na minha  lista de posts
-
+And eu vejo a frase "lol é um lixo #Naojoguem" no topo da minha lista de posts
 
 Scenario: editar um post existente sem sucesso
-Given estou logado com o usuário "flavin_DoPneu123"
+Given eu estou logado com o usuário "bebeto09"
 And eu estou na página "Meus posts"
 And eu vejo uma lista de posts
-And eu vejo a opção "editar post"
-When eu seleciono a "editar post"
-And  eu substituo a frase "lol é muito bom #topdms" presente na "caixa de texto" pela frase ""
+When eu seleciono, no post mais recente, a opção "editar"
+And eu substituo a frase do post por ""
 And eu seleciono a opção "Salvar alterações"
 Then eu vejo na tela uma mensagem de erro
-And eu ainda estou na página "Meus posts"
 And eu nao vejo a frase "" na minha lista de posts
-And eu ainda vejo a frase "lol é muito bom #topdms" na minha lista de posts
-
+And eu vejo a frase "lol é um lixo #Naojoguem" no topo da minha lista de posts
 
 Scenario:  Cancelar a edição de um post existente 
-Given estou logado com o usuário "flavin_doPneu123"
+Given eu estou logado com o usuário "bebeto09"
 And eu estou na página "Meus posts"
 And eu vejo uma lista de posts
-And eu vejo a opção "editar post"
-when eu seleciono a "editar post"
-And  eu substituo a frase "lol é muito bom #topdms" presente na "caixa de texto" pela frase "lol é top"
+When eu seleciono, no post mais recente, a opção "editar"
+And eu substituo a frase do post por "lol é top"
 And eu seleciono a opção "Cancelar"
-Then eu ainda vejo a frase "lol é muito bom #topdms" na minha lista de posts
+Then eu vejo a frase "lol é um lixo #Naojoguem" no topo da minha lista de posts
 And eu ainda estou na página "Meus posts"
-
-
-
-Scenario: Acessar uma página enquanto cria um post
-Given Estou logado com o usuário "flavin_DoPneu123"
-And estou na página "Meus posts"
-And vejo uma "publicação"
-And vejo a opção "Criar post"
-When Eu seleciono a opção "Criar post"
-And digito o texto "#HxH é top de" na "caixa de texto"
-And seleciono a página "perfil"
-Then Eu estou na página "perfil"
-And vejo a mensagem "Rascunho descartado" na tela
-
