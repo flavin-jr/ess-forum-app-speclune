@@ -58,6 +58,10 @@ defineSupportCode(function ({ Given, When, Then }) {
         mostRecentPost = handleString(mostRecentPost);
         expect(mostRecentPost).to.equal(post);
     })
+    Then(/^eu vejo na tela uma mensagem de erro/,async()=>{
+        await expect(element(by.className('msg-error')).isPresent()).to.eventually.equal(true);
+    })
+    
     // Given(/^I'm on the page "([^\"]*)"$/, async (name) => {
     //     await browser.get("http://localhost:4200/my_posts");
     //     await expect(browser.getTitle()).to.eventually.equal(name);
