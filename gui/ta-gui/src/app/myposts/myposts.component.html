@@ -6,7 +6,8 @@
     <div class="msg-sucess" *ngIf="msgSucess">
         <p>Post criado com sucesso !</p>
     </div>
-    <div>
+    <div class="info-container">
+        <img src="./../../assets/avatar.svg" alt="avatar">
         <p id="username">{{username}}</p>
     </div>
     <button (click)="toggleCreatePost()" id="btn-criar-post">Criar Post</button>

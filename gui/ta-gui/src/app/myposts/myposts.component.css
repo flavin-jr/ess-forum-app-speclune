@@ -134,15 +134,21 @@ button{
     align-items: center;
     justify-content: center;
 }
-div #username{
-    color: rgb(255, 255, 255);
-    background-color: gray;
-    border-radius: 12px;
-    width: 150px;
-    height: 60px;
+
+.info-container{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: gray;
+    color: white;
+    gap: 10px;
+    border-radius: 30px;
+    padding-right: 10px;
+    
+}
+img{
+    height: 65px;
+    width: 65px;
 }
 
 
