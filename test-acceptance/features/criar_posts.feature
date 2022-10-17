@@ -14,4 +14,12 @@ Then eu vejo na tela uma mensagem de sucesso
 And eu ainda estou na página "Meus posts"
 And eu vejo a frase "lol é muito bom #topdms" na minha lista de posts
 
-
+Scenario: adicionar um novo post sem texto
+Given estou logado com o usuário "bebeto09"
+And eu estou na página "Meus posts"
+When eu seleciono a "Criar Post"
+And escrevo a frase "" na caixa de texto
+And eu seleciono a opção "Postar"
+Then eu vejo na tela uma mensagem de erro
+And eu ainda estou na página "Meus posts"
+And eu nao vejo a frase "" na minha lista de posts
