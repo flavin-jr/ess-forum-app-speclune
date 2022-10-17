@@ -26,7 +26,11 @@ export class EditpostsComponent implements OnInit {
   }
 
   handleHeaderPost(post:string){
-    this.post = post.replace(/[0-9"-/:]+/g, '');
+    var postInArray: string[] = post.split(' ');
+    postInArray.splice(-5,5);
+    postInArray.shift();
+    console.log(postInArray);
+    this.post = postInArray.join(' ');
   }
   handleEdit(post: string): void {
     console.log()
