@@ -15,9 +15,9 @@
 <div class="post-container" >
 
     <div class="text-container">
-        <textarea  [(ngModel)]="post" cols="70" rows="16" 
+        <textarea id="caixa-de-texto-post" [(ngModel)]="post" cols="70" rows="16" 
         placeholder="Digite aqui ...">{{post}}</textarea>
-        <p *ngIf="!msgPost">Digite algo !!!</p>
+        <p class="msg-error" *ngIf="!msgPost">Digite algo !!!</p>
     </div>
     <div class="btn-container">
 
