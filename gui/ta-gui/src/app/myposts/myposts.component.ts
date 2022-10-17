@@ -22,6 +22,7 @@ export class MypostsComponent implements OnInit {
     myPosts: [],
     comments: []
   };
+  username:string = '';
 
   ngOnInit(): void {
     this.getUserMaster()
@@ -32,7 +33,7 @@ export class MypostsComponent implements OnInit {
     .subscribe(data=>{
       this.userMaster =  new User(data);
       this.allPosts = [...this.userMaster.myPosts];
-
+      this.username = this.userMaster.username;
       this.getPosts();
     })
 
