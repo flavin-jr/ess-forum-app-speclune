@@ -19,7 +19,6 @@
                     fill="currentColor" />
             </svg>
         </button>
-        <!-- <app-comment ngIf="commentStatus[i]"  [status]="[commentStatus[i]]"></app-comment> -->
         <div class="commentcomponent" *ngIf="commentStatus[i]">
             <textarea name="text" cols="200" rows="8" placeholder="Adicione um comentário..." [(ngModel)]="commentText">
                 {{commentText}}
@@ -30,10 +29,16 @@
                 <button class="send-btn-abble" *ngIf="commentText.length>0" (click)="toggleComment(i);addComment(post.id,post.post,3,commentText)">Enviar</button>
             </div>
         </div>
-        <div  class="comment" *ngFor="let comment of post.comment">
+        <div  class="comment" *ngFor="let comment of post.comment; let c = index">
             <div *ngIf="comment!==[]">
             <p  class="username">@{{getUsernameById(comment.id)}}</p>
-            <p >{{comment.comment}}</p>
+            <div class="comment-reduced" *ngIf="!seeMoreStatus[c]">
+                <p *ngIf="comment.comment.length > limitSize" >{{reduceTextSize(comment.comment)}} <button class="show-more-btn" (click)="toggleSeeMore(c)">...Ver mais</button></p>
+                <p *ngIf="comment.comment.length <= limitSize">{{comment.comment}}</p>
+            </div>
+            <div class="comment-full" *ngIf="seeMoreStatus[c]">
+                <p>{{comment.comment}}</p>
+            </div>
             </div>
         </div>
     </div>
