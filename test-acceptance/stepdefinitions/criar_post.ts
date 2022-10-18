@@ -68,7 +68,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     })
 
     Then(/^eu ainda estou na página "([^\"]*)"$/, async (pageName) => {
-        sleep(4000).then(() => {
+        sleep(10000).then(() => {
             expect(browser.getTitle()).to.eventually.equal(pageName);
 
         })
@@ -80,7 +80,7 @@ defineSupportCode(function ({ Given, When, Then }) {
         expect(mostRecentPost).to.equal(post);
     })
     Then(/^eu vejo na tela uma mensagem de erro/, async () => {
-        sleep(4000).then(() => {
+        sleep(10000).then(() => {
             expect(element(by.className('msg-error')).isPresent()).to.eventually.equal(true);
         })
     })
@@ -89,37 +89,8 @@ defineSupportCode(function ({ Given, When, Then }) {
         var mostRecentPost: string = await element.all(by.className('post-list')).first().getText();
 
         mostRecentPost = handleString(mostRecentPost);
-        console.log(mostRecentPost);
         expect(mostRecentPost).to.not.equal(post);
     })
 
-    // Given(/^I'm on the page "([^\"]*)"$/, async (name) => {
-    //     await browser.get("http://localhost:4200/my_posts");
-    //     await expect(browser.getTitle()).to.eventually.equal(name);
-    // })
-
-    // Given(/^the "([^\"]*)" "([^\"]*)" from "([^\"]*)", costing "(\d*)" doesn't appear on the list$/, async (color, name, brand, price) => {
-    //     expect((await element.all(by.id(`car-${name}-${brand}-${price}-${color}`))).length).to.equal(0);
-    // })
-
-    // When(/^I fill the name fild with "([^\"]*)", the brand with "([^\"]*)", the price with "(\d*)", the color with "([^\"]*)"$/, 
-    //     async (name, brand, price, color) => {
-    //         await element(by.id("what")).clear();
-    //         await element(by.id("car-brand-input")).clear();
-    //         await element(by.id("car-price-input")).clear();
-    //         await element(by.id("car-color-input")).clear();
-
-    //         await element(by.id("what")).sendKeys(<string> name);
-    //         await element(by.id("car-brand-input")).sendKeys(<string> brand);
-    //         await element(by.id("car-price-input")).sendKeys(<string> price);
-    //         await element(by.id("car-color-input")).sendKeys(<string> color);
-    // })
-
-    // When(/^I confirm the registration$/, async () => {
-    //     await element(by.id("register-car")).click();
-    // })
-
-    // Then(/^the "([^\"]*)" "([^\"]*)" from "([^\"]*)", costing "(\d*)" appears on the list$/, async (color, name, brand, price) => {
-    //     expect((await element.all(by.id(`car-${name}-${brand}-${price}-${color}`))).length).to.equal(1);
-    // })
+    
 });
