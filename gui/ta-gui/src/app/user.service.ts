@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http:HttpClient) {
 
   }
-
+  
   getUser():Observable<any>{
     return this.http.get(this.taURL + "/my_posts");
     
@@ -22,8 +22,8 @@ export class UserService {
     return this.http.get(this.taURL + "/posts");
     
   };
-  addPost(user:User){
-    const body = user;
+  addPost(post:string,id:number){
+    const body = [post,id];
     console.log(body);
 
     return this.http.post(this.taURL + "/my_posts",body);
@@ -31,7 +31,10 @@ export class UserService {
   updatePost(post:string, id:number,index:number){
     return this.http.put(this.taURL + "/edit_post",[post,id,index]);
   }
-  
+  // deletePost(id:number, index:number){
+  //   let endpoints:string = `/:${id}/:${index}`;
+  //   return this.http.delete(this.taURL + "/my_posts" +endpoints);
+  // }
   };
   
 

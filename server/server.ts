@@ -6,13 +6,7 @@ import { UserService } from './src/user.service';
 
 var app = express();
 var cors = require('cors')
-var allowCrossDomain = function(req: any, res: any, next: any) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', '*');
-  res.setHeader('Access-Control-Allow-Headers', '*');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-}
+
 app.use(cors());
 
 app.use(bodyParser.json());
@@ -26,15 +20,12 @@ app.get('/my_posts', (req:express.Request,res:express.Response)=>{
     res.send(users);
 });
 app.post('/my_posts',(req:express.Request,res:express.Response)=>{
-  const user = req.body;
-  console.log(user);
-  userService.deleteData(3);
-  userService.addData(user);
-  // console.log(req.body);
-  // const user = userService.addPost(myPosts.post,myPosts.id);
-  // console.log(user);
-  // res.send(user);
+  const data = req.body;
+  console.log(data);
+  userService.addPost(data[0],data[1]);
+  
 })
+
 app.get('/posts', (req:express.Request,res:express.Response)=>{
   const users = userService.get();
   res.send(users);
@@ -48,7 +39,13 @@ app.put('/edit_post', (req:express.Request, res:express.Response)=>{
 var server = app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
-
+// app.delete('/my_posts/:id',(req:express.Request,res:express.Response)=>{
+//   const id = req.params.id;
+//   const index = 0;
+//   console.log(id,index);
+//   userService.deleteData(id,index);
+  
+// })
 function closeServer(): void {
   server.close();
 }

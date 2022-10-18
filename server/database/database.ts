@@ -30,33 +30,43 @@ export class DBService {
     getData() {
         return this.data[this.name];
     }
-
+    addPost(post: string, id: number) {
+        var indice: number = -1;
+        const users: User[] = this.getData();
+        const userChange = users.find((value: User,index:number) => {
+            if (value.id === id) {
+                indice = index;
+            }
+        });
+        this.data[this.name][indice].myPosts.push(post);
+        this.write();
+    }   
     add(data: any) {
         this.data[this.name].push(data);
         this.write();
     }
 
-    delete(id: number) {
-        var indice:number = -1;
-        const users:User[] = this.getData()
-        const userDelete = users.find((value:User,index:number)=>{
-            if(value.id === id){
+    delete(id: number,postIndex:number) {
+        var indice: number = -1;
+        const users: User[] = this.getData()
+        const userDelete = users.find(function (value: User, index: number) {
+            if (value.id === id) {
                 indice = index;
                 console.log(`Index do usuario master no db: ${indice}`);
             }
         });
 
-        this.data[this.name].splice(indice,1);
-        
+        this.data[this.name][indice].myPosts.splice(postIndex,1);
+
         this.write();
     }
 
-    updatePost(post:string, id:number, index:number) {
-        
-        var indice:number = -1;
-        const users:User[] = this.getData()
-        const userDelete = users.find((value:User,index:number)=>{
-            if(value.id === id){
+    updatePost(post: string, id: number, index: number) {
+
+        var indice: number = -1;
+        const users: User[] = this.getData()
+        const userDelete = users.find((value: User, index: number) => {
+            if (value.id === id) {
                 indice = index;
                 console.log(`Index do usuario master no db: ${indice}`);
             }
@@ -64,7 +74,6 @@ export class DBService {
 
         this.data[this.name][indice].myPosts[index] = post;
         this.write();
-        // console.log(this.getData());
     }
 }
 

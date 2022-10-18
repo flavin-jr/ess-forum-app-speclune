@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
 import { HttpClient } from '@angular/common/http';
 import { User } from '../user';
@@ -54,7 +54,7 @@ export class MypostsComponent implements OnInit {
     post = this.formatedPost(post)
     this.allPosts.push(post);
     this.userMaster.myPosts.push(post);
-    this.user.addPost(this.userMaster)
+    this.user.addPost(post,this.userMaster.id)
     .subscribe(res=>{console.log("Poste adicionado ao BD!!!")});
     console.log(this.allPosts);
     
@@ -90,7 +90,14 @@ export class MypostsComponent implements OnInit {
       })
     }
   }
-  
+  // deletePost(index:number){
+  //   this.allPosts.splice(index,1);
+  //   this.userMaster.myPosts.splice(index,1);
+  //   this.user.deletePost(this.userMaster.id,index)
+  //   .subscribe(res=>{
+  //     console.log("dado deletado");
+  //   })
+  // }
   sleep(ms:number) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }

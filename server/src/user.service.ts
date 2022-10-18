@@ -5,7 +5,7 @@ export class UserService {
     users: DBService;
     idCount: number;
 
-    // Construtor da classe, carrega o DB
+    
     constructor() {
         this.users = new DBService('clients');
     }
@@ -32,10 +32,9 @@ export class UserService {
         }
         
     }
-    addPost(post:string, id:number):User[]{
-        const user:any = this.get().find(({id}:any)=> user.id == id);
-        this.users.add(user);
-        return this.get();
+    addPost(post:string, id:number){
+        
+        return this.users.addPost(post,id);
     }
     getCommentsById(id:number): string[]{
         return
@@ -44,12 +43,10 @@ export class UserService {
     updateData(data:Array<any>){
         return this.users.updatePost(data[0],data[1],data[2]);
     }
-    deleteData(index:number){
-        return this.users.delete(index);
-    }
-    addData(user:User){
-        return this.users.add(user);
-    }
+    // deleteData(id:number,postIndex:number){
+    //     return this.users.delete(id,postIndex);
+    // }
+   
     get(): User[] {
         return this.users.getData();
     }
