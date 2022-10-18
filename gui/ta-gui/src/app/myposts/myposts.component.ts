@@ -47,7 +47,7 @@ export class MypostsComponent implements OnInit {
   public formatedPost(post:string): string{
     const date = new Date();
     const dayHour = date.toLocaleString('pt-br');
-    post = `" ${post} "  -- ${dayHour}`;
+    post = `" ${post} " -- ${dayHour}`;
     return post
   }
   addPost(post:string):void{
