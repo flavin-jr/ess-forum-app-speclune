@@ -4,42 +4,42 @@
             "id": 0,
             "username": "Renam01",
             "myPosts": [
-                " \" oi \" -- 14/10/2022 02:05:34",
-                "\" pessoal o vasco da gama ta maneirinho sacoe \" -- 14/10/2022 02:05:34"
+                " \" Cyberpunk 2077 é incrível!!! Apesar dos bugs do lançamento, ele é bom demais! 9.5/10 \" -- 14/10/2022 02:05:34",
+                "\" Grand Chase é o melhor jogo da época das Lan Houses, sinto muita saudade. Pense num jogo bom pra passar horas jogando \" -- 14/10/2022 02:05:34"
             ],
 
-            "comments": [[{"id":1,"comment":"Eae meu vei"},{"id":1,"comment":"Fala!"},{"id":4, "comment": "Hoy"}],[{"id":3, "comment": "VASCOO!!"}]]
+            "comments": [[{"id":1,"comment":"Vish, Cyberbug?? KKKKKKK"},{"id":1,"comment":"Esse jogo já tá morto não?"},{"id":4, "comment": "Joguei recentemente também, curti muito a história."}],[{"id":3, "comment": "Aí é pura nostalgia"}]]
 
         },
         {   
             "id": 1,
             "username": "flavin09",
             "myPosts": [
-                " \" Achei bem legal a nova UI do valorant \" -- 14/08/2022 01:00:34",
+                " \" Overwatch 2 restaura o fantástico shooter de antigamente, tornando-o gratuito para todos. Mudanças na mecânica multijogador tornam a jogabilidade ainda mais fascinante e resolvem os aborrecimentos com o original. \" -- 14/08/2022 01:00:34",
 
-                " \" Meu amigo, quer skin horrivel essa nova do vava \" -- 01/10/2022 22:05:34"
+                " \" League of legends é um jogo muito superestimado, não sei como tem gente que joga ainda \" -- 01/10/2022 22:05:34"
 
             ],
-            "comments": []
+            "comments": [[{"id":3, "comment": "Overwatch 2 é o mesmo jogo 2 basicamente, não mudou nada."}],[]]
         },
         {
             "id": 3,
             "username": "bebeto09",
             "myPosts": [
-                "\" eh quase ne quase \" -- 14/10/2022 02:05:34",
-                "\" ja eh quase, tira o quase \" -- 08/10/2022 01:05:34"
+                "\" Mesmo depois de anos, league of legends ainda é um dos melhores jogos online do mercado! \" -- 14/10/2022 02:05:34",
+                "\" VALORANT é elite tá \" -- 08/10/2022 01:05:34"
             ],
-            "comments": []
+            "comments": [[],[]]
         },
         {
             "id": 4,
             "username": "heitchosf",
             "myPosts": [
-                "\" Quando lança o novo personagem do vava ? \" -- 08/10/2022 01:05:34"
+                "\" Eu jogo GTA V há 8 anos e ainda não é chato, sempre tem algo novo para fazer. Um dos meus jogos favoritos de todos os tempos. \" -- 08/10/2022 01:05:34"
                 ,
-                "\" Eh pra respeitar esse server do rl, bom dms, slk. \" -- 08/10/2022 11:05:34"
+                "\" Elden Ring foi um dos melhores lançamentos desse ano. Fromsoftware acertou muito. \" -- 08/10/2022 11:05:34"
             ],
-            "comments": []
+            "comments": [[],[]]
         },
         {
             "id": 5,
