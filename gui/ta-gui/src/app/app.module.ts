@@ -9,7 +9,6 @@ import { MypostsComponent } from './myposts/myposts.component';
 import { EditpostsComponent } from './editposts/editposts.component';
 import { UserService } from './user.service';
 import { PostsComponent } from './posts/posts.component';
-import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +17,6 @@ import { CommentComponent } from './comment/comment.component';
     MypostsComponent,
     EditpostsComponent,
     PostsComponent,
-    CommentComponent
   ],
   imports: [
     BrowserModule,

@@ -11,21 +11,24 @@ export class UserService {
   private headers = new Headers({'Content-Type':'application/json'});
   private taURL = 'http://localhost:3000';
   constructor(private http:HttpClient) {
-
+ 
   }
-  
+ 
   getUser():Observable<any>{
     return this.http.get(this.taURL + "/my_posts");
-    
+ 
   };
   getPosts():Observable<any>{
     return this.http.get(this.taURL + "/posts");
-    
+ 
   };
+  addComment(data:object){
+    return this.http.post(this.taURL + "/posts", data);
+  }
   addPost(post:string,id:number){
     const body = [post,id];
     console.log(body);
-
+ 
     return this.http.post(this.taURL + "/my_posts",body);
   }
   updatePost(post:string, id:number,index:number){
@@ -36,5 +39,3 @@ export class UserService {
   //   return this.http.delete(this.taURL + "/my_posts" +endpoints);
   // }
   };
-  
-
