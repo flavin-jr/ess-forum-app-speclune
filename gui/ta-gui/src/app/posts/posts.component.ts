@@ -34,7 +34,6 @@ export class PostsComponent implements OnInit {
     })
   }
   fillPosts():void{
-    // console.log(this.allUsersTemp);
     for(let user of this.allUsersTemp)
     {
       for(let post of user.myPosts)
@@ -59,18 +58,15 @@ export class PostsComponent implements OnInit {
  
       return value.id===id;
     });
-    // console.log(name.username);
     return name.username;
   }
  
   toggleComment(pos:number):void{
     this.commentStatus[pos] = !this.commentStatus[pos];
-    console.log(this.commentStatus);
   }
  
   clearTextArea():void{
     this.commentText = '';
- 
   }
  
   addComment(id:number, post:string, idSender:number, comment:String):void{
@@ -99,7 +95,6 @@ export class PostsComponent implements OnInit {
 
  toggleSeeMore(pos:number):void{
   this.seeMoreStatus[pos] = !this.seeMoreStatus[pos];
-  console.log(this.seeMoreStatus);
  }
  
 }

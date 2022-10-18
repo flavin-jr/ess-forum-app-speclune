@@ -19,7 +19,6 @@
                     fill="currentColor" />
             </svg>
         </button>
-        <!-- <app-comment ngIf="commentStatus[i]"  [status]="[commentStatus[i]]"></app-comment> -->
         <div class="commentcomponent" *ngIf="commentStatus[i]">
             <textarea name="text" cols="200" rows="8" placeholder="Adicione um comentário..." [(ngModel)]="commentText">
                 {{commentText}}
