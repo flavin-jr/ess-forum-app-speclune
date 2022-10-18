@@ -12,6 +12,8 @@ export class PostsComponent implements OnInit {
  
   constructor(private user: UserService,private router:Router ) { }
   commentStatus: Array<boolean> = [];
+  seeMoreStatus: Array<boolean> = [];
+  limitSize:number = 50;
   commentText:string = '';
  
   allPosts: Array<any>= [];
@@ -32,7 +34,7 @@ export class PostsComponent implements OnInit {
     })
   }
   fillPosts():void{
-    console.log(this.allUsersTemp);
+    // console.log(this.allUsersTemp);
     for(let user of this.allUsersTemp)
     {
       for(let post of user.myPosts)
@@ -44,6 +46,7 @@ export class PostsComponent implements OnInit {
         {
           user.comments.shift(); 
           this.allPosts.push({id:user.id, post:post ,comment:comments});
+          this.seeMoreStatus.push(false); //setando o array como falso para cada comentário
         }
         this.commentStatus.push(false); //setando o array como falso para cada post
       }
@@ -56,7 +59,7 @@ export class PostsComponent implements OnInit {
  
       return value.id===id;
     });
-    console.log(name.username);
+    // console.log(name.username);
     return name.username;
   }
  
@@ -84,6 +87,19 @@ export class PostsComponent implements OnInit {
   redirectTo(uri:string){
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(()=>
     this.router.navigate([uri]));
+ }
+
+ reduceTextSize(text:string):string{
+  if(text.length > this.limitSize) 
+  {
+    text = text.substring(0,this.limitSize);
+  }
+  return text;
+ }
+
+ toggleSeeMore(pos:number):void{
+  this.seeMoreStatus[pos] = !this.seeMoreStatus[pos];
+  console.log(this.seeMoreStatus);
  }
  
 }
