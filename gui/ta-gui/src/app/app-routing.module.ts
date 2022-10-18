@@ -5,9 +5,22 @@ import { MypostsComponent } from './myposts/myposts.component';
 import { PostsComponent } from './posts/posts.component';
 
 const routes: Routes = [
-  { path: 'my_posts', component: MypostsComponent ,title: "Meus posts"},
-  {path: 'edit_post', component: EditpostsComponent,title: "Editar posts"},
-  { path: 'posts', component: PostsComponent, title: "Publicações" }
+
+  {
+    path: 'my_posts',
+    component: MypostsComponent,
+    title: "Meus posts"
+  },
+  {
+    path: 'edit_post',
+    component: EditpostsComponent,
+    title: "Editar posts"
+  },
+  { path: 'posts', 
+  component: PostsComponent, 
+  title: "Publicações"
+  }
+
 ];
 
 @NgModule({
