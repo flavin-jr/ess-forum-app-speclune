@@ -3,15 +3,12 @@ import { DBService } from "./../database/database";
  
 export class UserService {
     users: DBService;
-    idCount: number;
- 
  
     constructor() {
         this.users = new DBService('clients');
     }
     getUserById(id:number): object{
         const users = this.get()
-        console.log(users);
         for(let user of users){
             if(user.id == id){
  
@@ -22,7 +19,6 @@ export class UserService {
     }
     getPostsById(id:number): string[]{
         const users = this.get()
-        console.log(users);
         for(let user of users){
             if(user.id == id){
  
