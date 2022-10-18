@@ -19,6 +19,7 @@ export class EditpostsComponent implements OnInit {
     this.userMaster = history.state[0];
     this.index = history.state[1];
     this.post = this.userMaster.myPosts[this.index];
+    console.log(this.post)
     this.handleHeaderPost(this.post);
     console.log(this.userMaster);
     console.log(this.post);
@@ -27,7 +28,8 @@ export class EditpostsComponent implements OnInit {
 
   handleHeaderPost(post:string){
     var postInArray: string[] = post.split(' ');
-    postInArray.splice(-5,5);
+    console.log();
+    postInArray.splice(-4,4);
     postInArray.shift();
     console.log(postInArray);
     this.post = postInArray.join(' ');
@@ -50,7 +52,7 @@ export class EditpostsComponent implements OnInit {
   public formatedPost(post:string): string{
     const date = new Date();
     const dayHour = date.toLocaleString('pt-br');
-    post = `" ${post} "  -- ${dayHour}`;
+    post = `" ${post} " -- ${dayHour}`;
     return post
   }
   attPost(post:string){
