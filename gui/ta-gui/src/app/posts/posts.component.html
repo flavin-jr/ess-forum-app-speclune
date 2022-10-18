@@ -1,17 +1,17 @@
 <html>
-
+ 
 <div class="container">
-
+ 
     <h1>Publicações</h1>
-
+ 
 </div>
-
+ 
 <div class="container-posts" *ngIf="allPosts.length > 0">
-    <div class="post" *ngFor="let post of allPosts">
+    <div class="post" *ngFor="let post of allPosts; let i = index">
         <p class="username">@{{getUsernameById(post.id)}}</p>
         <p>{{post.post}}</p>
-        <button class="btn-comment" (click)="toggleComment()" title="Comentar">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0000" xmlns="http://www.w3.org/2000/svg">
+        <button class="btn-comment" (click)="toggleComment(i)" title="Comentar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="#0000" xmlns="http://www.w3.org/2000/svg%22%3E">
                 <path d="M17 9H7V7H17V9Z" fill="currentColor" />
                 <path d="M7 13H17V11H7V13Z" fill="currentColor" />
                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -19,15 +19,24 @@
                     fill="currentColor" />
             </svg>
         </button>
-        <app-comment *ngIf="commentStatus"></app-comment>
-        <div class="comment" *ngFor="let comment of post.comment">
-            <p class="username">@{{getUsernameById(comment.id)}}</p>
-            <p>{{comment.comment}}</p>
+        <!-- <app-comment ngIf="commentStatus[i]"  [status]="[commentStatus[i]]"></app-comment> -->
+        <div class="commentcomponent" *ngIf="commentStatus[i]">
+            <textarea name="text" cols="200" rows="8" placeholder="Adicione um comentário..." [(ngModel)]="commentText">
+                {{commentText}}
+            </textarea>
+            <div class="buttons">
+                <button class="cancel-btn" (click)="toggleComment(i);clearTextArea()">Cancelar</button>
+                <button class="send-btn-disabbled" *ngIf="commentText=='' ">Enviar</button>
+                <button class="send-btn-abble" *ngIf="commentText.length>0" (click)="toggleComment(i);addComment(post.id,post.post,3,commentText)">Enviar</button>
+            </div>
+        </div>
+        <div  class="comment" *ngFor="let comment of post.comment">
+            <div *ngIf="comment!==[]">
+            <p  class="username">@{{getUsernameById(comment.id)}}</p>
+            <p >{{comment.comment}}</p>
+            </div>
         </div>
     </div>
 </div>
-
-
-
-
+ 
 </html>
